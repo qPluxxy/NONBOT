@@ -1,5 +1,6 @@
 import discord
 from discord.ext.commands import bot, Bot
+import os
 
 bot = Bot(command_prefix='논!')
 
@@ -19,4 +20,5 @@ async def 안녕(ctx):
 async def 핑(ctx):
     await ctx.send('퐁! {0}'.format(round(bot.latency*1000))+'ms')
 
-bot.run('Nzk3MzI1MTQ4NDU2NzQ3MDE5.X_k06A.yaBr7WWYa5rKB-b6pSLXvIZUyoo')
+access_token = os.environ["BOT_TOKEN"]    
+bot.run(access_token)
